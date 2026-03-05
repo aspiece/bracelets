@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Bracelet Shop</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<header>
+  <h1>🌿 Bracelet Shop</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="cart.html" class="cart-link">
+      🛒 Cart
+      <span id="cart-count"></span>
+    </a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<main>
+  <section class="about-section">
+    <h2>About Us</h2>
+    <p>
+      Welcome to the Bracelet Shop! We are a small, student-run business dedicated to crafting
+      beautiful, one-of-a-kind bracelets by hand. Every piece is made with care using quality
+      materials sourced from around the world.
+    </p>
+    <p>
+      Our mission is to bring joy through wearable art. Whether you're looking for a gift for
+      a friend or a treat for yourself, we have something for everyone.
+    </p>
+
+    <h3>Contact Us</h3>
+    <p>Have a question or a custom request? We'd love to hear from you!</p>
+
+    <form id="contact-form" class="contact-form" novalidate>
+      <div>
+        <label for="contact-name">Your Name</label>
+        <input type="text" id="contact-name" name="name" placeholder="Jane Doe" required>
+      </div>
+      <div>
+        <label for="contact-email">Email Address</label>
+        <input type="email" id="contact-email" name="email" placeholder="jane@example.com" required>
+      </div>
+      <div>
+        <label for="contact-message">Message</label>
+        <textarea id="contact-message" name="message" placeholder="Your message…" required></textarea>
+      </div>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 Bracelet Shop — Handcrafted with ❤️</p>
+</footer>
+
+<div id="toast"></div>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+</body>
+</html>

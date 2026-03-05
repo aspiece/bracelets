@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop — Bracelet Shop</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<header>
+  <h1>🌿 Bracelet Shop</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="cart.html" class="cart-link">
+      🛒 Cart
+      <span id="cart-count"></span>
+    </a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<main>
+  <div class="shop-header">
+    <h2>Our Collection</h2>
+    <p>Browse our handcrafted bracelets — find the one that speaks to you.</p>
+  </div>
+
+  <div class="shop-controls">
+    <input type="search" id="search-input" placeholder="Search bracelets…" aria-label="Search bracelets">
+    <select id="filter-select" aria-label="Filter by category">
+      <option value="all">All Categories</option>
+      <option value="beaded">Beaded</option>
+      <option value="charm">Charm</option>
+      <option value="wrap">Wrap</option>
+    </select>
+  </div>
+
+  <div id="product-grid" class="product-grid"></div>
+</main>
+
+<footer>
+  <p>© 2025 Bracelet Shop — Handcrafted with ❤️</p>
+</footer>
+
+<div id="toast"></div>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+</body>
+</html>
