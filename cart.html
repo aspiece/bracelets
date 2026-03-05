@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart — Bracelet Shop</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<header>
+  <h1>🌿 Bracelet Shop</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="cart.html" class="cart-link">
+      🛒 Cart
+      <span id="cart-count"></span>
+    </a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<main>
+  <section class="cart-section">
+    <h2>Your Cart</h2>
+
+    <div id="cart-items-container"></div>
+
+    <div id="cart-summary-box" class="cart-summary" style="display:none;">
+      <h3>Order Summary</h3>
+      <div class="summary-row">
+        <span>Items</span>
+        <span id="cart-item-count">0</span>
+      </div>
+      <div class="summary-row">
+        <span>Subtotal</span>
+        <span id="cart-subtotal">$0.00</span>
+      </div>
+      <div class="total-row">
+        <span>Total</span>
+        <span id="cart-total">$0.00</span>
+      </div>
+      <button id="checkout-btn" class="checkout-btn">Proceed to Checkout</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 Bracelet Shop — Handcrafted with ❤️</p>
+</footer>
+
+<div id="toast"></div>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+</body>
+</html>
