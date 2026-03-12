@@ -16,7 +16,7 @@ body {
 
 /* ===== Header ===== */
 header {
-  background: #6b3f2a;
+  background: pink;
   color: #fff;
   padding: 0 20px;
   display: flex;
@@ -51,7 +51,7 @@ nav a {
 
 nav a:hover,
 nav a.active {
-  background: #f7e6d5;
+  background: pink;
   color: #6b3f2a;
 }
 
