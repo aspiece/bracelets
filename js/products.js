@@ -19,7 +19,7 @@ const products = [
     id: 3,
     name: "Golden Charm Bracelet",
     price: 22,
-    image: "images/bracelet3.jpg",
+    image: "images/bracelet3.jpeg",
     description: "Delicate gold-tone charms on a fine chain.",
     category: "charm"
   },
@@ -27,7 +27,7 @@ const products = [
     id: 4,
     name: "Boho Wrap Bracelet",
     price: 18,
-    image: "images/bracelet4.jpg",
+    image: "images/bracelet4.jpeg",
     description: "Earthy tones in a hand-woven wrap style.",
     category: "wrap"
   },
@@ -35,7 +35,7 @@ const products = [
     id: 5,
     name: "Crystal Sparkle Bracelet",
     price: 25,
-    image: "images/bracelet5.jpg",
+    image: "images/bracelet5.jpeg",
     description: "Shimmering crystals that catch the light beautifully.",
     category: "charm"
   },
@@ -43,7 +43,7 @@ const products = [
     id: 6,
     name: "Friendship Knot Bracelet",
     price: 9,
-    image: "images/bracelet6.jpg",
+    image: "images/bracelet6.jpeg",
     description: "Classic friendship bracelet with a colorful knotted design.",
     category: "wrap"
   }
@@ -57,7 +57,7 @@ const products = [
 function createProductCard(product) {
   return `
     <article class="product-card">
-      <img src="${product.image}" alt="${product.name}" onerror="this.src='images/placeholder.jpg'">
+      <img src="${product.image}" alt="${product.name}" onerror="this.src='images/placeholder.jpeg'">
       <h3>${product.name}</h3>
       <p class="description">${product.description}</p>
       <p class="price">$${product.price.toFixed(2)}</p>
