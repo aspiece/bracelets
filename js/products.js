@@ -3,7 +3,7 @@ const products = [
     id: 1,
     name: "Ocean Blue Bracelet",
     price: 12,
-    image: "images/bracelet1.jpg",
+    image: "images/bracelet1.jpeg",
     description: "A cool blue bracelet inspired by the ocean waves.",
     category: "beaded"
   },
@@ -11,7 +11,7 @@ const products = [
     id: 2,
     name: "Sunset Bead Bracelet",
     price: 15,
-    image: "images/bracelet2.jpg",
+    image: "images/bracelet2.jpeg",
     description: "Warm sunset colors with natural wooden beads.",
     category: "beaded"
   },
