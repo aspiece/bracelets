@@ -16,7 +16,7 @@ body {
 
 /* ===== Header ===== */
 header {
-  background: pink;
+  background: rgb(231, 137, 14);
   color: #fff;
   padding: 0 20px;
   display: flex;
