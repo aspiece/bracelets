@@ -2,7 +2,7 @@ const products = [
   {
     id: 1,
     name: "Ocean Blue Bracelet",
-    price: 12,
+    price: 20,
     image: "images/bracelet1.jpeg",
     description: "A cool blue bracelet inspired by the ocean waves.",
     category: "beaded"
@@ -10,7 +10,7 @@ const products = [
   {
     id: 2,
     name: "Sunset Bead Bracelet",
-    price: 15,
+    price: 20,
     image: "images/bracelet2.jpeg",
     description: "Warm sunset colors with natural wooden beads.",
     category: "beaded"
@@ -18,7 +18,7 @@ const products = [
   {
     id: 3,
     name: "Golden Charm Bracelet",
-    price: 22,
+    price: 20,
     image: "images/bracelet3.jpeg",
     description: "Delicate gold-tone charms on a fine chain.",
     category: "charm"
@@ -26,7 +26,7 @@ const products = [
   {
     id: 4,
     name: "Boho Wrap Bracelet",
-    price: 18,
+    price: 20,
     image: "images/bracelet4.jpeg",
     description: "Earthy tones in a hand-woven wrap style.",
     category: "wrap"
@@ -34,7 +34,7 @@ const products = [
   {
     id: 5,
     name: "Crystal Sparkle Bracelet",
-    price: 25,
+    price: 20,
     image: "images/bracelet5.jpeg",
     description: "Shimmering crystals that catch the light beautifully.",
     category: "charm"
@@ -42,7 +42,7 @@ const products = [
   {
     id: 6,
     name: "Friendship Knot Bracelet",
-    price: 9,
+    price: 20,
     image: "images/bracelet6.jpeg",
     description: "Classic friendship bracelet with a colorful knotted design.",
     category: "wrap"
