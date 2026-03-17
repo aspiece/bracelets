@@ -139,9 +139,8 @@ main {
 /* ===== Product Grid ===== */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-template-columns: repeat(2, 1fr); /* 👈 2 per row */
   gap: 24px;
-  padding: 0;
 }
 
 .product-card {
