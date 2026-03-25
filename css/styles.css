@@ -35,12 +35,17 @@ header {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 10px;
-  min-height: 64px;
+  min-height: 70px;
+
+  border-top: 4px solid var(--accent);
+  border-bottom: 4px solid var(--accent);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 header h1 {
-  font-size: 1.6rem;
-  letter-spacing: 1px;
+  font-size: 2.2rem;
+  letter-spacing: 1.5px;
+  font-weight: 600;
 }
 
 /* ===== Navigation ===== */
@@ -110,9 +115,8 @@ main {
 }
 
 .hero h2 {
-  font-size: 2.2rem;
-  color: var(--primary);
-  margin-bottom: 14px;
+  font-size: 2.8rem;
+  font-weight: 600;
 }
 
 .hero p {
