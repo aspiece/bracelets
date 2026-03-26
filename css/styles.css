@@ -44,13 +44,14 @@ body::before {
 
   opacity: 0.15;
 
-  animation: spinBackground 20s linear infinite;
+  animation: spinBackground 60s linear infinite; /* slower! */
 
   transform-origin: center;
   will-change: transform;
 
   z-index: -1;
 }
+
 
 /* ===== Header ===== */
 header {
@@ -357,4 +358,3 @@ footer {
     transform: rotate(360deg);
   }
 }
-animation: spinBackground 10s linear infinite;
