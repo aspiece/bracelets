@@ -90,8 +90,9 @@ nav a {
   transition: all 0.25s ease;
 }
 
-nav a.active,
-nav a:hover {
+/* ===== Unified Hover & Active Styles for All Links ===== */
+nav a:hover,
+nav a.active {
   background: var(--accent);
   color: var(--primary);
   box-shadow: 0 0 12px rgba(200,169,106,0.6);
