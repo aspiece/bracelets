@@ -103,7 +103,7 @@ nav a {
 /* Active page link */
 nav a.active {
   background: var(--accent);
-  color: black;
+  color: gold;
   box-shadow: 0 0 10px rgba(200,169,106,0.6);
 }
 
