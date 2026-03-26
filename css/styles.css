@@ -6,10 +6,10 @@
 }
 
 :root {
-  --primary: #111111;     /* deep black */
-  --secondary: #f8f6f2;   /* soft cream */
-  --accent: #c8a96a;      /* gold */
-  --accent-dark: #a88d4f; /* darker gold */
+  --primary: #111111;
+  --secondary: #f8f6f2;
+  --accent: #c8a96a;
+  --accent-dark: #a88d4f;
   --text: #1a1a1a;
   --muted: #6b6b6b;
   --card: #ffffff;
@@ -20,11 +20,11 @@ body {
   font-family: 'Segoe UI', Arial, sans-serif;
 
   background:
-    linear-gradient(rgba(248,246,242,0.92), rgba(248,246,242,0.92)),
-    url("../images/logo-bg.png");
+    linear-gradient(rgba(248,246,242,0.96), rgba(248,246,242,0.96)),
+    url("../images/image.png");
 
-  background-size: 400px; /* controls logo size */
-  background-repeat: repeat; /* pattern effect */
+  background-size: 300px;
+  background-repeat: repeat;
   background-position: center;
 
   color: var(--text);
@@ -34,19 +34,18 @@ body {
   flex-direction: column;
 }
 
-
 /* ===== Header ===== */
 header {
   width: 100%;
   background: var(--primary);
   color: white;
   padding: 0 40px;
-  
+
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  min-height: 90px; /* taller header */
+  min-height: 90px;
 
   border-top: 5px solid var(--accent);
   border-bottom: 5px solid var(--accent);
@@ -54,20 +53,19 @@ header {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
-
 header h1 {
   font-size: 2.2rem;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   font-weight: 600;
+  color: var(--accent);
 }
 
 /* ===== Navigation ===== */
 nav {
   display: flex;
   align-items: center;
-  gap: 40px; /* spreads links evenly */
+  gap: 40px;
 }
-
 
 nav a {
   color: #e5e5e5;
@@ -83,8 +81,8 @@ nav a:hover,
 nav a.active {
   background: var(--accent);
   color: black;
+  box-shadow: 0 0 10px rgba(200,169,106,0.6);
 }
-
 
 /* Cart badge */
 .cart-link {
@@ -115,17 +113,16 @@ main {
   flex: 1;
   padding: 40px;
   width: 100%;
-  max-width: 1400px; /* bigger page width */
+  max-width: 1400px;
   margin: 0 auto;
 }
-
 
 /* ===== Hero ===== */
 .hero {
   text-align: center;
   padding: 60px 20px 40px;
   background: linear-gradient(135deg, #ffffff, #f8f6f2);
-  border-radius: 12px;
+  border-radius: 14px;
   margin-bottom: 40px;
   border: 1px solid var(--border);
 }
@@ -147,13 +144,13 @@ main {
 .btn,
 .product-card .add-to-cart,
 .checkout-btn {
-  background: var(--primary);
+  background: linear-gradient(135deg, #111, #2a2a2a);
   color: white;
   padding: 12px 28px;
   border-radius: 25px;
   border: none;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
 }
 
 .btn:hover,
@@ -162,6 +159,7 @@ main {
   background: var(--accent);
   color: black;
   transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(200,169,106,0.6);
 }
 
 /* ===== Featured Title ===== */
@@ -171,7 +169,6 @@ main {
   margin: 40px 0 25px;
 }
 
-
 /* ===== Product Grid ===== */
 .product-grid {
   display: grid;
@@ -179,7 +176,6 @@ main {
   gap: 30px;
   width: 100%;
 }
-
 
 .product-card {
   background: var(--card);
@@ -192,23 +188,27 @@ main {
   flex-direction: column;
   justify-content: space-between;
 
-  height: 100%; /* equal height cards */
+  height: 100%;
+  transition: all 0.3s ease;
 }
 
-
 .product-card:hover {
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  transform: translateY(-6px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+  transform: translateY(-8px) scale(1.01);
 }
 
 .product-card img {
   width: 100%;
-  height: 260px; /* bigger images */
+  height: 260px;
   object-fit: cover;
   border-radius: 12px;
   margin-bottom: 14px;
+  transition: transform 0.3s ease;
 }
 
+.product-card:hover img {
+  transform: scale(1.05);
+}
 
 .product-card h3 {
   font-size: 1rem;
