@@ -357,4 +357,4 @@ footer {
     transform: rotate(360deg);
   }
 }
-animation: spinBackground 120s linear infinite;
+animation: spinBackground 10s linear infinite;
