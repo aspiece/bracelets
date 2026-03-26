@@ -16,6 +16,7 @@
   --border: #e5e5e5;
 }
 
+/* ===== Body ===== */
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   background: var(--secondary);
@@ -24,7 +25,7 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  overflow-x: hidden; /* keep horizontal scroll hidden */
+  overflow-x: hidden;
 }
 
 /* ===== Rotating Background Images ===== */
@@ -35,14 +36,14 @@ body::before {
   left: -50%;
   width: 200%;
   height: 200%;
-  background-image: url("../images/image1.png"), url("../images/image2.png"), url("../images/image3.png");
+  background-image: url("images/image1.png"), url("images/image2.png"), url("images/image3.png");
   background-repeat: repeat;
   background-size: 300px;
-  opacity: 0.08; /* subtle effect */
-  animation: spinBackground 180s linear infinite; /* very slow rotation */
+  opacity: 0.08;
+  animation: spinBackground 180s linear infinite; /* very slow luxurious rotation */
   transform-origin: center;
   will-change: transform;
-  z-index: -1; /* stays behind all content */
+  z-index: -1;
 }
 
 /* ===== Header ===== */
@@ -59,7 +60,7 @@ header {
   border-bottom: 5px solid var(--accent);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   position: relative;
-  z-index: 1; /* header above background */
+  z-index: 1;
 }
 
 header h1 {
@@ -80,7 +81,9 @@ nav {
   margin-right: auto;
 }
 
-nav a {
+nav a,
+nav .cart-link a,
+nav .about-link a {
   color: #e5e5e5;
   text-decoration: none;
   font-size: 1.35rem;
@@ -92,7 +95,11 @@ nav a {
 
 /* ===== Unified Hover & Active Styles for All Links ===== */
 nav a:hover,
-nav a.active {
+nav a.active,
+nav .cart-link a:hover,
+nav .cart-link a.active,
+nav .about-link a:hover,
+nav .about-link a.active {
   background: var(--accent);
   color: var(--primary);
   box-shadow: 0 0 12px rgba(200,169,106,0.6);
@@ -130,7 +137,7 @@ main {
   max-width: 1400px;
   margin: 0 auto;
   position: relative;
-  z-index: 0; /* ensures content above background */
+  z-index: 0;
 }
 
 /* ===== Hero / About Section ===== */
@@ -144,7 +151,7 @@ main {
   border: 1px solid var(--border);
   box-shadow: 0 12px 30px rgba(0,0,0,0.1);
   position: relative;
-  z-index: 0; /* content above background */
+  z-index: 0;
 }
 
 .hero h2,
@@ -210,7 +217,7 @@ main {
   justify-content: space-between;
   transition: all 0.3s ease;
   position: relative;
-  z-index: 0; /* ensures images above background */
+  z-index: 0;
 }
 
 .product-card:hover {
