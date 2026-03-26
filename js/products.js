@@ -1,10 +1,10 @@
 const products = [
   {
     id: 1,
-    name: "Ocean Blue Bracelet",
+    name: "Aqua Harmony Bracelet",
     price: 20,
     image: "images/bracelet1.jpeg",
-    description: "A cool blue bracelet inspired by the ocean waves.",
+    description: "A turquoise and gold beaded bracelet with fresh, ocean-inspired look simple, elegant, and perfect for any outfit.",
     category: "beaded"
   },
   {
