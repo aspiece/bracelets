@@ -42,12 +42,16 @@ body::before {
   background-repeat: repeat;
   background-size: 300px;
 
-  opacity: 0.15; /* 👈 more visible */
+  opacity: 0.15;
 
-  animation: spinBackground 120s linear infinite;
+  animation: spinBackground 20s linear infinite;
+
+  transform-origin: center;
+  will-change: transform;
 
   z-index: -1;
 }
+
 /* ===== Header ===== */
 header {
   width: 100%;
