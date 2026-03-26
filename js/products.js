@@ -4,23 +4,23 @@ const products = [
     name: "Aqua Harmony Bracelet",
     price: 20,
     image: "images/bracelet1.jpeg",
-    description: "A turquoise and gold beaded bracelet with fresh, ocean-inspired look simple, elegant, and perfect for any outfit.",
+    description: "A turquoise and gold beaded bracelet with fresh, ocean-inspired look-simple, elegant, and perfect for any outfit.",
     category: "beaded"
   },
   {
     id: 2,
-    name: "Sunset Bead Bracelet",
+    name: "Cocoa Sands Bracelet",
     price: 20,
     image: "images/bracelet2.jpeg",
-    description: "Warm sunset colors with natural wooden beads.",
+    description: "An earthy mix of neutral beads with a natural rustic feel-simple and versatile.",
     category: "beaded"
   },
   {
     id: 3,
-    name: "Golden Charm Bracelet",
+    name: "Golden Solstice Bracelet",
     price: 20,
     image: "images/bracelet3.jpeg",
-    description: "Delicate gold-tone charms on a fine chain.",
+    description: "Sun-kissed beads with a radiant golden charm for an effortlessly warm, boho glow.",
     category: "charm"
   },
   {
