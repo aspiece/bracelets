@@ -82,10 +82,10 @@ header h1 {
 /* ===== Navigation ===== */
 nav {
   display: flex;
-  justify-content: space-evenly; /* evenly distributes links across navbar */
+  justify-content: space-around; /* more natural spacing than space-evenly */
   align-items: center;
   width: 100%;
-  max-width: 600px; /* optional: keeps nav from stretching too far on large screens */
+  max-width: 700px; /* slightly wider for bigger spacing */
   margin-left: auto;
   margin-right: auto;
 }
@@ -93,26 +93,21 @@ nav {
 nav a {
   color: #e5e5e5;
   text-decoration: none;
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 8px 14px;
-  border-radius: 20px;
+  font-size: 1.3rem; /* bigger font */
+  font-weight: 600;  /* bolder */
+  padding: 12px 20px; /* more clickable area */
+  border-radius: 25px; /* slightly bigger pill shape */
   transition: all 0.25s ease;
 }
 
-/* Active page link */
-nav a.active {
+/* Active page link & Hover effect remain the same */
+nav a.active,
+nav a:hover {
   background: var(--accent);
   color: gold;
   box-shadow: 0 0 10px rgba(200,169,106,0.6);
 }
 
-/* Hover effect */
-nav a:hover {
-  background: var(--accent);
-  color: black;
-  box-shadow: 0 0 10px rgba(200,169,106,0.6);
-}
 
 /* Cart badge */
 .cart-link {
