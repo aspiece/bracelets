@@ -24,7 +24,7 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  overflow-x: hidden;
+  overflow-x: hidden; /* keep horizontal scroll hidden */
 }
 
 /* ===== Background Animation ===== */
@@ -39,10 +39,10 @@ body::before {
   background-repeat: repeat;
   background-size: 300px;
   opacity: 0.1;
-  animation: spinBackground 120s linear infinite; /* slower rotation */
+  animation: spinBackground 120s linear infinite; /* slow rotation */
   transform-origin: center;
   will-change: transform;
-  z-index: -1;
+  z-index: -1; /* stays behind all content */
 }
 
 /* ===== Header ===== */
@@ -58,6 +58,8 @@ header {
   border-top: 5px solid var(--accent);
   border-bottom: 5px solid var(--accent);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1; /* header above background */
 }
 
 header h1 {
@@ -126,6 +128,8 @@ main {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
+  position: relative;
+  z-index: 0; /* ensures content above background */
 }
 
 /* ===== Hero / About Section ===== */
@@ -138,6 +142,8 @@ main {
   margin-bottom: 40px;
   border: 1px solid var(--border);
   box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 0; /* content above background */
 }
 
 .hero h2,
@@ -202,6 +208,8 @@ main {
   flex-direction: column;
   justify-content: space-between;
   transition: all 0.3s ease;
+  position: relative;
+  z-index: 0; /* ensures images above background */
 }
 
 .product-card:hover {
@@ -216,6 +224,8 @@ main {
   border-radius: 14px;
   margin-bottom: 14px;
   transition: transform 0.3s ease;
+  display: block; /* ensures image shows */
+  z-index: 1;
 }
 
 .product-card:hover img {
@@ -238,3 +248,55 @@ main {
   font-size: 1.15rem;
   font-weight: bold;
   color: var(--accent);
+}
+
+/* ===== Footer ===== */
+footer {
+  background: var(--primary);
+  color: #d4d4d4;
+  text-align: center;
+  padding: 16px;
+  margin-top: auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== Toast ===== */
+#toast {
+  background: var(--primary);
+  color: white;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 24px;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+#toast.show {
+  opacity: 1;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+
+  .product-card img {
+    height: 150px;
+  }
+}
+
+/* ===== Background Animation Keyframes ===== */
+@keyframes spinBackground {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
