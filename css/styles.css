@@ -27,7 +27,7 @@ body {
   overflow-x: hidden; /* keep horizontal scroll hidden */
 }
 
-/* ===== Background Animation ===== */
+/* ===== Rotating Background Images ===== */
 body::before {
   content: "";
   position: fixed;
@@ -35,11 +35,11 @@ body::before {
   left: -50%;
   width: 200%;
   height: 200%;
-  background-image: url("../images/image.png");
+  background-image: url("../images/image1.png"), url("../images/image2.png"), url("../images/image3.png");
   background-repeat: repeat;
   background-size: 300px;
-  opacity: 0.1;
-  animation: spinBackground 120s linear infinite; /* slow rotation */
+  opacity: 0.08; /* subtle effect */
+  animation: spinBackground 180s linear infinite; /* very slow rotation */
   transform-origin: center;
   will-change: transform;
   z-index: -1; /* stays behind all content */
@@ -224,7 +224,7 @@ main {
   border-radius: 14px;
   margin-bottom: 14px;
   transition: transform 0.3s ease;
-  display: block; /* ensures image shows */
+  display: block;
   z-index: 1;
 }
 
