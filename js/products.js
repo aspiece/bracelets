@@ -33,10 +33,10 @@ const products = [
   },
   {
     id: 5,
-    name: "Crystal Sparkle Bracelet",
+    name: "Faith & Grace Bracelet",
     price: 20,
     image: "images/bracelet5.jpeg",
-    description: "Shimmering crystals that catch the light beautifully.",
+    description: "Soft neutral beads paired with a delicate cross charm, symbolizing faith, grace, and everyday elegance.",
     category: "charm"
   },
   {
