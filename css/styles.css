@@ -18,12 +18,22 @@
 
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: var(--secondary);
+
+  background:
+    linear-gradient(rgba(248,246,242,0.92), rgba(248,246,242,0.92)),
+    url("../images/logo-bg.png");
+
+  background-size: 400px; /* controls logo size */
+  background-repeat: repeat; /* pattern effect */
+  background-position: center;
+
   color: var(--text);
   min-height: 100vh;
+
   display: flex;
   flex-direction: column;
 }
+
 
 /* ===== Header ===== */
 header {
