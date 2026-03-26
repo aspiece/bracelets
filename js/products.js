@@ -25,10 +25,11 @@ const products = [
   },
   {
     id: 4,
-    name: "Boho Wrap Bracelet",
+    name: "Stone Whisper Bracelet",
     price: 20,
     image: "images/bracelet4.jpeg",
-    description: "Earthy tones in a hand-woven wrap style.",
+    description: "Cool-toned natural stones accented with dark spacers for a sleek, balanced, and effortlessly modern look.
+      ",
     category: "wrap"
   },
   {
