@@ -19,20 +19,18 @@
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
 
-  background:
-    linear-gradient(rgba(248,246,242,0.96), rgba(248,246,242,0.96)),
-    url("../images/image.png");
-
-  background-size: 300px;
-  background-repeat: repeat;
-  background-position: center;
+  background: var(--secondary); /* clean base */
 
   color: var(--text);
   min-height: 100vh;
 
   display: flex;
   flex-direction: column;
+
+  position: relative;
+  overflow-x: hidden;
 }
+
 
 /* ===== Header ===== */
 header {
