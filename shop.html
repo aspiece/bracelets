@@ -13,7 +13,7 @@
   <nav>
     <a href="index.html">Home</a>
     <a href="shop.html" class="active">Shop</a>
-    <a href="cart.html">Cart</a>
+    <a href="cart.html">Cart <span id="cart-count"></span></a>
     <a href="about.html">About</a>
   </nav>
 </header>
@@ -23,15 +23,18 @@
 
   <!-- JS will fill this -->
   <div id="product-grid" class="product-grid"></div>
-
 </main>
 
 <footer>
   <p>&copy; 2026 Honey BeadBox. All rights reserved.</p>
 </footer>
 
-<!-- LINK YOUR JS FILE -->
+<!-- TOAST NOTIFICATION -->
+<div id="toast"></div>
+
+<!-- LINK JS FILES -->
 <script src="js/products.js"></script>
+<script src="js/cart.js"></script>
 
 <script>
   // Get the shop grid
