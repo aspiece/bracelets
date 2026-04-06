@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop - Bracelet Store</title>
+  <title>Shop - Honey BeadBox</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
 <header>
-  <h1>My Honey's BeadBox</h1>
+  <h1> My Honey BeadBox</h1>
   <nav>
     <a href="index.html">Home</a>
     <a href="shop.html" class="active">Shop</a>
@@ -19,56 +19,27 @@
 </header>
 
 <main>
-  <h2>Our Bracelets</h2>
-  <div class="product-grid">
-    <div class="product-card">
-      <img src="images/bracelet1.jpeg" alt="Bracelet 1">
-      <h3>Elegant Bracelet 1</h3>
-      <p class="description">Beautiful hand-crafted bracelet.</p>
-      <p class="price">$25</p>
-      <button class="add-to-cart">Add to Cart</button>
-    </div>
-    <div class="product-card">
-      <img src="images/bracelet2.jpeg" alt="Bracelet 2">
-      <h3>Elegant Bracelet 2</h3>
-      <p class="description">Beautiful hand-crafted bracelet.</p>
-      <p class="price">$28</p>
-      <button class="add-to-cart">Add to Cart</button>
-    </div>
-    <div class="product-card">
-      <img src="images/bracelet3.jpeg" alt="Bracelet 3">
-      <h3>Elegant Bracelet 3</h3>
-      <p class="description">Beautiful hand-crafted bracelet.</p>
-      <p class="price">$30</p>
-      <button class="add-to-cart">Add to Cart</button>
-    </div>
-    <div class="product-card">
-      <img src="images/bracelet4.jpeg" alt="Bracelet 4">
-      <h3>Elegant Bracelet 4</h3>
-      <p class="description">Beautiful hand-crafted bracelet.</p>
-      <p class="price">$32</p>
-      <button class="add-to-cart">Add to Cart</button>
-    </div>
-    <div class="product-card">
-      <img src="images/bracelet5.jpeg" alt="Bracelet 5">
-      <h3>Elegant Bracelet 5</h3>
-      <p class="description">Beautiful hand-crafted bracelet.</p>
-      <p class="price">$35</p>
-      <button class="add-to-cart">Add to Cart</button>
-    </div>
-    <div class="product-card">
-      <img src="images/bracelet6.jpeg" alt="Bracelet 6">
-      <h3>Elegant Bracelet 6</h3>
-      <p class="description">Beautiful hand-crafted bracelet.</p>
-      <p class="price">$38</p>
-      <button class="add-to-cart">Add to Cart</button>
-    </div>
-  </div>
+  <h2 class="section-title">Our Bracelets</h2>
+
+  <!-- JS will fill this -->
+  <div id="product-grid" class="product-grid"></div>
+
 </main>
 
 <footer>
-  &copy; 2026 Bracelet Store. All rights reserved.
+  <p>&copy; 2026 Honey BeadBox. All rights reserved.</p>
 </footer>
+
+<!-- LINK YOUR JS FILE -->
+<script src="js/products.js"></script>
+
+<script>
+  // Get the shop grid
+  const grid = document.getElementById('product-grid');
+
+  // Show ALL products on shop page
+  renderProducts(grid, products);
+</script>
 
 </body>
 </html>
