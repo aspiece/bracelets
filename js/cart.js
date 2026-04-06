@@ -90,7 +90,7 @@ function updateCartCount() {
   const badge = document.getElementById('cart-count');
   if (!badge) return;
 
-  badge.textContent = total;
+  badge.textContent = `(${total})`;
   if (total > 0) {
     badge.classList.add('visible');
   } else {
