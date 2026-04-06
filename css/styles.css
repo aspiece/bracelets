@@ -173,68 +173,75 @@ main {
   transform: translateY(-3px);
 }
 
-/* ===== Featured Products Grid ===== */
+/* ===== Featured Products Grid – Luxury Layout ===== */
 #featured-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-auto-rows: minmax(300px, auto);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-auto-rows: minmax(320px, auto);
   gap: 30px;
   margin-top: 30px;
 }
 
-.product-card:nth-child(1) {
-  grid-column: span 2;
+/* Luxury Asymmetric Spans for Featured Products */
+#featured-grid .product-card:nth-child(1),
+#featured-grid .product-card:nth-child(4) {
+  grid-column: span 2; /* make 1st and 4th cards larger */
 }
 
-.product-card:nth-child(4) {
-  grid-column: span 2;
+#featured-grid .product-card:nth-child(2),
+#featured-grid .product-card:nth-child(3),
+#featured-grid .product-card:nth-child(5),
+#featured-grid .product-card:nth-child(6) {
+  grid-column: span 1;
 }
 
-
+/* ===== Product Card Styles – Luxury Upgrade ===== */
 .product-card {
-  background: var(--card);
+  background: rgba(255, 255, 255, 0.95);
   border: 1px solid var(--border);
-  border-radius: 18px;
+  border-radius: 20px;
   padding: 25px;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
   position: relative;
-  z-index: 1;
 }
 
 .product-card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 15px 40px var(--shadow);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.15);
 }
 
 .product-card img {
   width: 100%;
-  height: 240px;
-  max-height: 350px;
+  height: 280px;
   object-fit: cover;
-  border-radius: 14px;
-  margin-bottom: 15px;
-  transition: transform 0.3s ease;
+  border-radius: 16px;
+  margin-bottom: 18px;
+  transition: transform 0.4s ease;
 }
 
 .product-card:hover img {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
 .product-card h3 {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   color: var(--accent-dark);
   margin-bottom: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 .product-card .description {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--muted);
   margin-bottom: 12px;
+  line-height: 1.5;
 }
 
 .product-card .price {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: var(--accent);
   margin-bottom: 15px;
@@ -243,19 +250,21 @@ main {
 .product-card .add-to-cart {
   background: linear-gradient(135deg, #111, #2a2a2a);
   color: white;
-  padding: 12px 28px;
-  border-radius: 25px;
+  padding: 14px 30px;
+  border-radius: 30px;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  font-weight: 600;
+  transition: all 0.4s ease;
 }
 
 .product-card .add-to-cart:hover {
   background: var(--accent);
   color: var(--primary);
-  transform: translateY(-2px);
-  box-shadow: 0 0 12px var(--hover-shadow);
+  transform: translateY(-3px);
+  box-shadow: 0 0 18px rgba(200,169,106,0.5);
 }
+
 
 /* ===== Footer ===== */
 footer {
