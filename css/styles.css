@@ -30,7 +30,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== Luxury Spinning Background ===== */
+/* ===== Spinning Background ===== */
 body::before {
   content: "";
   position: fixed;
@@ -38,19 +38,46 @@ body::before {
   left: -50%;
   width: 200%;
   height: 200%;
+  
   background-image: url("../images/image.png");
   background-repeat: repeat;
   background-size: 300px;
-  opacity: 0.08;
-  animation: spinBackground 220s linear infinite;
+
+  /* GOLDEN GLOW LUXURY */
+  box-shadow: inset 0 0 150px rgba(200, 169, 106, 0.3),
+              0 0 100px rgba(255, 215, 0, 0.1);
+  
+  /* Slight shimmer effect using blur */
+  filter: blur(1.5px) brightness(1.1);
+
+  opacity: 0.09;
+
+  animation: spinBackground 250s linear infinite,
+             shimmer 6s ease-in-out infinite alternate;
+
   transform-origin: center;
   z-index: -2;
 }
 
+/* Rotate forever */
 @keyframes spinBackground {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+/* Subtle shimmer / pulsate effect for luxury */
+@keyframes shimmer {
+  0% { opacity: 0.08; }
+  50% { opacity: 0.12; }
+  100% { opacity: 0.08; }
+}
+
+/* Ensure content floats above */
+header, main, footer {
+  position: relative;
+  z-index: 1;
+}
+
 
 
 /* ===== Header ===== */
