@@ -38,15 +38,26 @@ body::before {
   left: -50%;
   width: 200%;
   height: 200%;
-  background-image: url("images/image.png"), url("images/image1.jpeg"), url("images/image2.jpeg");
+  background-image: url("../images/image.png");
   background-repeat: repeat;
   background-size: 300px;
   opacity: 0.06;
-  animation: spinBackground 180s linear infinite; /* very slow rotation */
+  animation: spinBackground 180s linear infinite;
   transform-origin: center;
-  will-change: transform;
   z-index: -1;
 }
+
+@keyframes spinBackground {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+@keyframes spinBackground {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 
 @keyframes spinBackground {
   from { transform: rotate(0deg); }
