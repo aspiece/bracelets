@@ -3,51 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop — Bracelet Shop</title>
+  <title>Shop - Bracelet Store</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
 
 <header>
-  <h1>My Honey's BeadBox</h1>
+  <h1>Bracelet Shop</h1>
   <nav>
     <a href="index.html">Home</a>
-    <a href="shop.html">Shop</a>
-    <a href="cart.html" class="cart-link">
-      🛒 Cart
-      <span id="cart-count"></span>
-    </a>
+    <a href="shop.html" class="active">Shop</a>
     <a href="about.html">About</a>
+    <a href="cart.html">Cart</a>
   </nav>
 </header>
 
 <main>
-  <div class="shop-header">
-    <h2>Our Collection</h2>
-    <p>Browse our handcrafted bracelets — find the one that speaks to you.</p>
+  <h2>Our Bracelets</h2>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="images/bracelet1.jpeg" alt="Bracelet 1">
+      <h3>Elegant Bracelet 1</h3>
+      <p class="description">Beautiful hand-crafted bracelet.</p>
+      <p class="price">$25</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="images/bracelet2.jpeg" alt="Bracelet 2">
+      <h3>Elegant Bracelet 2</h3>
+      <p class="description">Beautiful hand-crafted bracelet.</p>
+      <p class="price">$28</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="images/bracelet3.jpeg" alt="Bracelet 3">
+      <h3>Elegant Bracelet 3</h3>
+      <p class="description">Beautiful hand-crafted bracelet.</p>
+      <p class="price">$30</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="images/bracelet4.jpeg" alt="Bracelet 4">
+      <h3>Elegant Bracelet 4</h3>
+      <p class="description">Beautiful hand-crafted bracelet.</p>
+      <p class="price">$32</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="images/bracelet5.jpeg" alt="Bracelet 5">
+      <h3>Elegant Bracelet 5</h3>
+      <p class="description">Beautiful hand-crafted bracelet.</p>
+      <p class="price">$35</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="images/bracelet6.jpeg" alt="Bracelet 6">
+      <h3>Elegant Bracelet 6</h3>
+      <p class="description">Beautiful hand-crafted bracelet.</p>
+      <p class="price">$38</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
   </div>
-
-  <div class="shop-controls">
-    <input type="search" id="search-input" placeholder="Search bracelets…" aria-label="Search bracelets">
-    <select id="filter-select" aria-label="Filter by category">
-      <option value="all">All Categories</option>
-      <option value="beaded">Beaded</option>
-      <option value="charm">Charm</option>
-      <option value="wrap">Wrap</option>
-    </select>
-  </div>
-
-  <div id="product-grid" class="product-grid"></div>
 </main>
 
 <footer>
-  <p>© 2026 Bracelet Shop — Handcrafted with ❤️</p>
+  &copy; 2026 Bracelet Store. All rights reserved.
 </footer>
 
-<div id="toast"></div>
-
-<script src="js/products.js"></script>
-<script src="js/cart.js"></script>
 </body>
 </html>
