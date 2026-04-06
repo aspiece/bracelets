@@ -78,3 +78,12 @@ function renderProducts(container, list) {
   }
   container.innerHTML = list.map(createProductCard).join('');
 }
+// Get the featured grid container
+const featuredGrid = document.getElementById('featured-grid');
+
+// Pick the first 4 products for featured
+const featuredProducts = products.slice(0, 4);
+
+// Render them
+renderProducts(featuredGrid, featuredProducts);
+
