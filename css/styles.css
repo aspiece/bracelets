@@ -46,6 +46,16 @@ nav a {
   margin-left: 20px;
   font-weight: 600;
 }
+/* ===== Navigation Hover & Active ===== */
+nav a:hover,
+nav a.active {
+  background: var(--accent); /* gold background for active link */
+  color: var(--primary);     /* dark text on active */
+  padding: 8px 16px;
+  border-radius: 20px;
+  box-shadow: 0 0 12px rgba(200,169,106,0.6); /* subtle glow */
+  transition: all 0.3s ease;
+}
 
 /* ===== Main ===== */
 main {
