@@ -1,190 +1,358 @@
-/* ===== Cart Page Enhancements ===== */
-#cart-items-container {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  margin-top: 30px;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart — Honey BeadBox</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://js.stripe.com/v3/"></script> <!-- Stripe -->
+  <style>
+    /* ===== Cart Page Enhancements ===== */
+    #cart-items-container {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cart-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+    }
+
+    .cart-item img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin-right: 20px;
+      flex-shrink: 0;
+    }
+
+    .cart-item-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .cart-item-info h3 {
+      font-size: 1.2rem;
+      color: var(--accent-dark);
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .cart-item-info .item-price {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .cart-item-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 5px;
+    }
+
+    .qty-btn {
+      background: var(--primary);
+      color: var(--accent);
+      border: none;
+      border-radius: 8px;
+      padding: 5px 12px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      font-weight: 700;
+      transition: all 0.3s ease;
+    }
+
+    .qty-btn:hover {
+      background: var(--accent);
+      color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 0 10px var(--hover-shadow);
+    }
+
+    .qty-display {
+      min-width: 25px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--text);
+    }
+
+    .remove-btn {
+      background: #d9534f;
+      color: white;
+      border: none;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .remove-btn:hover {
+      background: #c9302c;
+      box-shadow: 0 0 10px rgba(200,50,50,0.5);
+    }
+
+    #cart-summary-box {
+      margin-top: 40px;
+      padding: 25px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    #cart-summary-box h3,
+    #cart-summary-box span {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--accent-dark);
+    }
+
+    #checkout-btn {
+      background: var(--primary);
+      color: var(--accent);
+      font-weight: 700;
+      padding: 12px 28px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #checkout-btn:hover {
+      background: var(--accent);
+      color: var(--primary);
+      box-shadow: 0 0 18px var(--hover-shadow);
+      transform: translateY(-2px);
+    }
+
+    .empty-cart {
+      text-align: center;
+      padding: 50px 20px;
+      color: var(--muted);
+    }
+
+    .empty-cart .btn {
+      margin-top: 20px;
+      background: var(--primary);
+      color: var(--accent);
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .empty-cart .btn:hover {
+      background: var(--accent);
+      color: var(--primary);
+      box-shadow: 0 0 15px var(--hover-shadow);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 900px) {
+      .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .cart-item img {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 15px;
+      }
+      .cart-item-controls {
+        margin-top: 10px;
+      }
+      #cart-summary-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1> My Honey's BeadBox </h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="cart.html" class="cart-link">
+      🛒 Cart
+      <span id="cart-count"></span>
+    </a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<main>
+  <section class="cart-section">
+    <h2>Your Cart</h2>
+
+    <div id="cart-items-container"></div>
+
+    <div id="cart-summary-box" class="cart-summary" style="display:none;">
+      <h3>Order Summary</h3>
+      <div class="summary-row">
+        <span>Items</span>
+        <span id="cart-item-count">0</span>
+      </div>
+      <div class="summary-row">
+        <span>Subtotal</span>
+        <span id="cart-subtotal">$0.00</span>
+      </div>
+      <div class="total-row">
+        <span>Total</span>
+        <span id="cart-total">$0.00</span>
+      </div>
+      <button id="checkout-btn" class="checkout-btn">Proceed to Checkout</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2026 Honey BeadBox — Handcrafted with ❤️</p>
+</footer>
+
+<div id="toast"></div>
+
+<!-- JS -->
+<script src="js/products.js"></script>
+<script>
+/* ===== Cart Logic & Stripe Checkout ===== */
+const CART_KEY = 'bracelet_cart';
+
+// Load/save cart
+function loadCart() { try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; } catch { return []; } }
+function saveCart(cart) { localStorage.setItem(CART_KEY, JSON.stringify(cart)); }
+
+// Add to cart
+function addToCart(productId) {
+  const product = products.find(p => p.id === productId);
+  if (!product) return;
+  const cart = loadCart();
+  const existing = cart.find(item => item.id === productId);
+  if (existing) existing.quantity += 1;
+  else cart.push({...product, quantity:1});
+  saveCart(cart);
+  updateCartCount();
+  showToast(`"${product.name}" added to cart!`);
 }
 
-/* Individual cart item */
-.cart-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+// Remove & change quantity
+function removeFromCart(productId) { saveCart(loadCart().filter(i=>i.id!==productId)); updateCartCount(); renderCartPage(); }
+function changeQuantity(productId, delta) {
+  const cart = loadCart();
+  const item = cart.find(i=>i.id===productId);
+  if(!item) return;
+  item.quantity += delta;
+  if(item.quantity<=0){ removeFromCart(productId); return; }
+  saveCart(cart); updateCartCount(); renderCartPage();
 }
 
-.cart-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+// Update badge & toast
+function updateCartCount() {
+  const total = loadCart().reduce((sum,i)=>sum+i.quantity,0);
+  const badge = document.getElementById('cart-count');
+  if(!badge) return;
+  badge.textContent = `(${total})`;
+  badge.classList.toggle('visible', total>0);
 }
+function showToast(msg){ const toast=document.getElementById('toast'); if(!toast) return; toast.textContent=msg; toast.classList.add('show'); setTimeout(()=>toast.classList.remove('show'),2500); }
 
-/* Product image in cart */
-.cart-item img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  margin-right: 20px;
-  flex-shrink: 0;
-}
-
-/* Info section */
-.cart-item-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.cart-item-info h3 {
-  font-size: 1.2rem;
-  color: var(--accent-dark);
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-
-.cart-item-info .item-price {
-  font-size: 1rem;
-  color: var(--muted);
-  margin-bottom: 8px;
-}
-
-.cart-item-controls {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 5px;
-}
-
-.qty-btn {
-  background: var(--primary);
-  color: var(--accent);
-  border: none;
-  border-radius: 8px;
-  padding: 5px 12px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  font-weight: 700;
-  transition: all 0.3s ease;
-}
-
-.qty-btn:hover {
-  background: var(--accent);
-  color: var(--primary);
-  transform: translateY(-2px);
-  box-shadow: 0 0 10px var(--hover-shadow);
-}
-
-.qty-display {
-  min-width: 25px;
-  text-align: center;
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: var(--text);
-}
-
-/* Remove button */
-.remove-btn {
-  background: #d9534f;
-  color: white;
-  border: none;
-  padding: 6px 16px;
-  border-radius: 20px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.remove-btn:hover {
-  background: #c9302c;
-  box-shadow: 0 0 10px rgba(200,50,50,0.5);
-}
-
-/* Cart summary box */
-#cart-summary-box {
-  margin-top: 40px;
-  padding: 25px;
-  background: rgba(255,255,255,0.95);
-  border-radius: 20px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-#cart-summary-box h3,
-#cart-summary-box span {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--accent-dark);
-}
-
-#checkout-btn {
-  background: var(--primary);
-  color: var(--accent);
-  font-weight: 700;
-  padding: 12px 28px;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-#checkout-btn:hover {
-  background: var(--accent);
-  color: var(--primary);
-  box-shadow: 0 0 18px var(--hover-shadow);
-  transform: translateY(-2px);
-}
-
-/* Empty cart message */
-.empty-cart {
-  text-align: center;
-  padding: 50px 20px;
-  color: var(--muted);
-}
-
-.empty-cart .btn {
-  margin-top: 20px;
-  background: var(--primary);
-  color: var(--accent);
-  padding: 12px 28px;
-  border-radius: 30px;
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-block;
-  transition: all 0.3s ease;
-}
-
-.empty-cart .btn:hover {
-  background: var(--accent);
-  color: var(--primary);
-  box-shadow: 0 0 15px var(--hover-shadow);
-  transform: translateY(-2px);
-}
-
-/* Responsive adjustments */
-@media (max-width: 900px) {
-  .cart-item {
-    flex-direction: column;
-    align-items: flex-start;
+// Render cart page
+function renderCartPage(){
+  const container=document.getElementById('cart-items-container');
+  if(!container) return;
+  const cart=loadCart();
+  if(cart.length===0){
+    container.innerHTML=`<div class="empty-cart"><p>Your cart is empty.</p><a href="shop.html" class="btn">Browse Bracelets</a></div>`;
+    document.getElementById('cart-summary-box').style.display='none';
+    return;
   }
-  .cart-item img {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 15px;
-  }
-  .cart-item-controls {
-    margin-top: 10px;
-  }
-  #cart-summary-box {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  document.getElementById('cart-summary-box').style.display='';
+  container.innerHTML=cart.map(item=>`
+    <div class="cart-item" data-id="${item.id}">
+      <img src="images/${item.image}" alt="${item.name}" onerror="this.src='images/placeholder.jpg'">
+      <div class="cart-item-info">
+        <h3>${item.name}</h3>
+        <p class="item-price">$${item.price.toFixed(2)} each</p>
+        <div class="cart-item-controls">
+          <button class="qty-btn" onclick="changeQuantity(${item.id}, -1)">−</button>
+          <span class="qty-display">${item.quantity}</span>
+          <button class="qty-btn" onclick="changeQuantity(${item.id}, 1)">+</button>
+        </div>
+      </div>
+      <div>
+        <p style="font-weight:bold;color:#6b3f2a;">$${(item.price*item.quantity).toFixed(2)}</p>
+        <button class="remove-btn" onclick="removeFromCart(${item.id})">Remove</button>
+      </div>
+    </div>
+  `).join('');
+
+  const subtotal = cart.reduce((sum,item)=>sum+item.price*item.quantity,0);
+  document.getElementById('cart-subtotal').textContent=`$${subtotal.toFixed(2)}`;
+  document.getElementById('cart-total').textContent=`$${subtotal.toFixed(2)}`;
+  document.getElementById('cart-item-count').textContent=`${cart.reduce((sum,i)=>sum+i.quantity,0)} item${cart.reduce((sum,i)=>sum+i.quantity,0)!==1?'s':''}`;
 }
+
+// Stripe checkout
+document.getElementById('checkout-btn').addEventListener('click', async()=>{
+  const cart = loadCart();
+  if(cart.length===0){ showToast("Your cart is empty!"); return; }
+
+  const lineItems = cart.map(item=>({
+    price_data:{
+      currency:'usd',
+      product_data:{name:item.name, images:[`https://yourwebsite.com/images/${item.image}`]},
+      unit_amount:item.price*100
+    },
+    quantity:item.quantity
+  }));
+
+  try {
+    const res=await fetch('/create-checkout-session',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({lineItems})
+    });
+    const session=await res.json();
+    const stripe=Stripe('YOUR_PUBLISHABLE_KEY');
+    await stripe.redirectToCheckout({sessionId:session.id});
+  } catch(err){
+    console.error(err);
+    showToast("Checkout failed. Try again later.");
+  }
+});
+
+// On load
+document.addEventListener('DOMContentLoaded',()=>{
+  updateCartCount();
+  renderCartPage();
+});
+</script>
+</body>
+</html>
