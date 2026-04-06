@@ -28,8 +28,7 @@ const products = [
     name: "Stone Whisper Bracelet",
     price: 20,
     image: "bracelet4.jpeg",
-    description: "Cool-toned natural stones accented with dark spacers for a sleek, balanced, and effortlessly modern look.
-      ",
+    description: "Cool-toned natural stones accented with dark spacers for a sleek, balanced, and effortlessly modern look.",
     category: "wrap"
   },
   {
