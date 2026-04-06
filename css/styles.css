@@ -65,6 +65,8 @@ main {
   padding: 50px 40px;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;  /* above background but below header if needed */
 }
 
 /* ===== Footer ===== */
