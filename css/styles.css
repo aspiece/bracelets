@@ -36,26 +36,20 @@ body::before {
   left: -50%;
   width: 200%;
   height: 200%;
-  background-image: url("images/image.png"), url("images/image.png"), url("images/image.png"), url("images/image.png");
+  background-image: url("images/image.png"), url("images/image1.jpeg"), url("images/image2.jpeg"), url("images/image3.jpeg");
   background-repeat: repeat;
   background-size: 300px;
   opacity: 0.08;
-  animation: spinBackground 180s linear infinite; /* very slow luxurious rotation */
+  animation: spinBackground 180s linear infinite; 
   transform-origin: center;
   will-change: transform;
   z-index: -1;
 }
 
-/* ===== Background Animation Keyframes ===== */
 @keyframes spinBackground {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
-
 
 /* ===== Header ===== */
 header {
@@ -74,12 +68,7 @@ header {
   z-index: 1;
 }
 
-header h1 {
-  font-size: 2.4rem;
-  letter-spacing: 2px;
-  font-weight: 600;
-  color: var(--accent);
-}
+header h1 { font-size: 2.4rem; font-weight: 600; color: var(--accent); }
 
 /* ===== Navigation ===== */
 nav {
@@ -88,132 +77,41 @@ nav {
   align-items: center;
   width: 100%;
   max-width: 750px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
-nav a,
-nav .cart-link a,
-nav .about-link a {
-  color: #e5e5e5;
-  text-decoration: none;
-  font-size: 1.35rem;
-  font-weight: 600;
-  padding: 14px 22px;
-  border-radius: 30px;
+nav a { 
+  color: #e5e5e5; 
+  text-decoration: none; 
+  font-size: 1.35rem; 
+  font-weight: 600; 
+  padding: 14px 22px; 
+  border-radius: 30px; 
   transition: all 0.25s ease;
 }
 
-/* ===== Unified Hover & Active Styles for All Links ===== */
-nav a:hover,
-nav a.active,
-nav .cart-link a:hover,
-nav .cart-link a.active,
-nav .about-link a:hover,
-nav .about-link a.active {
+nav a:hover, nav a.active {
   background: var(--accent);
   color: var(--primary);
   box-shadow: 0 0 12px rgba(200,169,106,0.6);
-}
-
-/* ===== Cart Badge ===== */
-.cart-link {
-  position: relative;
-}
-
-#cart-count {
-  display: none;
-  position: absolute;
-  top: -6px;
-  right: -6px;
-  background: var(--accent);
-  color: black;
-  border-radius: 50%;
-  font-size: 0.75rem;
-  min-width: 18px;
-  height: 18px;
-  text-align: center;
-  line-height: 18px;
-}
-
-#cart-count.visible {
-  display: inline-block;
 }
 
 /* ===== Main ===== */
 main {
   flex: 1;
   padding: 50px 40px;
-  width: 100%;
   max-width: 1400px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
 }
 
-/* ===== Hero / About Section ===== */
-.hero,
-.about-section {
-  text-align: center;
-  padding: 60px 30px;
-  background: var(--secondary);
-  border-radius: 16px;
-  margin-bottom: 40px;
-  border: 1px solid var(--border);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
-  position: relative;
-  z-index: 0;
-}
-
-.hero h2,
-.about-section h2 {
-  font-size: 2.8rem;
-  font-weight: 600;
-  color: var(--accent);
-  margin-bottom: 16px;
-}
-
-.hero p,
-.about-section p {
-  font-size: 1.1rem;
-  color: var(--text);
-  line-height: 1.8;
-  margin-bottom: 18px;
-}
-
-.about-section h3 {
-  color: var(--accent-dark);
-  margin-top: 30px;
-  margin-bottom: 12px;
-}
-
-/* ===== Buttons ===== */
-.btn,
-.product-card .add-to-cart,
-.checkout-btn {
-  background: linear-gradient(135deg, #111, #2a2a2a);
-  color: white;
-  padding: 12px 28px;
-  border-radius: 25px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.btn:hover,
-.product-card .add-to-cart:hover,
-.checkout-btn:hover {
-  background: var(--accent);
-  color: var(--primary);
-  transform: translateY(-2px);
-  box-shadow: 0 0 12px rgba(200,169,106,0.6);
-}
+h2 { font-size: 2.5rem; color: var(--accent); margin-bottom: 30px; text-align: center; }
 
 /* ===== Product Grid ===== */
 .product-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: auto auto;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 30px;
 }
 
@@ -221,19 +119,17 @@ main {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 22px;
+  padding: 20px;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: all 0.3s ease;
-  position: relative;
-  z-index: 0;
 }
 
-.product-card:hover {
-  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+.product-card:hover { 
   transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
 }
 
 .product-card img {
@@ -243,30 +139,30 @@ main {
   border-radius: 14px;
   margin-bottom: 14px;
   transition: transform 0.3s ease;
-  display: block;
-  z-index: 1;
 }
 
-.product-card:hover img {
-  transform: scale(1.05);
-}
+.product-card:hover img { transform: scale(1.05); }
 
-.product-card h3 {
-  font-size: 1.05rem;
-  margin-bottom: 8px;
-}
+.product-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
+.product-card .price { color: var(--accent); font-weight: bold; font-size: 1.15rem; }
+.product-card .description { color: var(--muted); font-size: 0.9rem; flex: 1; margin-bottom: 10px; }
 
-.product-card .description {
-  font-size: 0.9rem;
-  color: var(--muted);
-  flex: 1;
-  margin-bottom: 10px;
-}
-
-.product-card .price {
-  font-size: 1.15rem;
-  font-weight: bold;
+.product-card button.add-to-cart {
+  background: var(--primary);
   color: var(--accent);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.product-card button.add-to-cart:hover {
+  background: var(--accent);
+  color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(200,169,106,0.6);
 }
 
 /* ===== Footer ===== */
@@ -276,36 +172,9 @@ footer {
   text-align: center;
   padding: 16px;
   margin-top: auto;
-  position: relative;
-  z-index: 1;
-}
-
-/* ===== Toast ===== */
-#toast {
-  background: var(--primary);
-  color: white;
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 12px 24px;
-  border-radius: 10px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 10;
-}
-
-#toast.show {
-  opacity: 1;
 }
 
 /* ===== Responsive ===== */
 @media (max-width: 600px) {
-  .product-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  }
-
-  .product-card img {
-    height: 150px;
-  }
+  .product-card img { height: 150px; }
 }
