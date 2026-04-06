@@ -176,10 +176,20 @@ main {
 /* ===== Featured Products Grid ===== */
 #featured-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: minmax(300px, auto);
   gap: 30px;
   margin-top: 30px;
 }
+
+.product-card:nth-child(1) {
+  grid-column: span 2;
+}
+
+.product-card:nth-child(4) {
+  grid-column: span 2;
+}
+
 
 .product-card {
   background: var(--card);
