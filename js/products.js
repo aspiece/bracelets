@@ -3,7 +3,7 @@ const products = [
     id: 1,
     name: "Aqua Harmony Bracelet",
     price: 20,
-    image: "images/bracelet1.jpeg",
+    image: "bracelet1.jpeg",
     description: "A turquoise and gold beaded bracelet with fresh, ocean-inspired look-simple, elegant, and perfect for any outfit.",
     category: "beaded"
   },
@@ -11,7 +11,7 @@ const products = [
     id: 2,
     name: "Cocoa Sands Bracelet",
     price: 20,
-    image: "images/bracelet2.jpeg",
+    image: "bracelet2.jpeg",
     description: "An earthy mix of neutral beads with a natural rustic feel-simple and versatile.",
     category: "beaded"
   },
@@ -19,7 +19,7 @@ const products = [
     id: 3,
     name: "Golden Solstice Bracelet",
     price: 20,
-    image: "images/bracelet3.jpeg",
+    image: "bracelet3.jpeg",
     description: "Sun-kissed beads with a radiant golden charm for an effortlessly warm, boho glow.",
     category: "charm"
   },
@@ -27,7 +27,7 @@ const products = [
     id: 4,
     name: "Stone Whisper Bracelet",
     price: 20,
-    image: "images/bracelet4.jpeg",
+    image: "bracelet4.jpeg",
     description: "Cool-toned natural stones accented with dark spacers for a sleek, balanced, and effortlessly modern look.
       ",
     category: "wrap"
@@ -36,7 +36,7 @@ const products = [
     id: 5,
     name: "Faith & Grace Bracelet",
     price: 20,
-    image: "images/bracelet5.jpeg",
+    image: "bracelet5.jpeg",
     description: "Soft neutral beads paired with a delicate cross charm, symbolizing faith, grace, and everyday elegance.",
     category: "charm"
   },
@@ -44,7 +44,7 @@ const products = [
     id: 6,
     name: "Friendship Knot Bracelet",
     price: 20,
-    image: "images/bracelet6.jpeg",
+    image: "bracelet6.jpeg",
     description: "Classic friendship bracelet with a colorful knotted design.",
     category: "wrap"
   }
