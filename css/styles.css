@@ -43,13 +43,10 @@ body::before {
   background-repeat: repeat;
   background-size: 300px;
 
-  /* GOLDEN GLOW LUXURY */
   box-shadow: inset 0 0 150px rgba(200, 169, 106, 0.3),
               0 0 100px rgba(255, 215, 0, 0.1);
   
-  /* Slight shimmer effect using blur */
   filter: blur(1.5px) brightness(1.1);
-
   opacity: 0.09;
 
   animation: spinBackground 250s linear infinite,
@@ -59,26 +56,21 @@ body::before {
   z-index: -2;
 }
 
-/* Rotate forever */
 @keyframes spinBackground {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
-/* Subtle shimmer / pulsate effect for luxury */
 @keyframes shimmer {
   0% { opacity: 0.08; }
   50% { opacity: 0.12; }
   100% { opacity: 0.08; }
 }
 
-/* Ensure content floats above */
 header, main, footer {
   position: relative;
   z-index: 1;
 }
-
-
 
 /* ===== Header ===== */
 header {
@@ -116,7 +108,6 @@ nav a {
   transition: all 0.3s ease;
 }
 
-/* Active & Hover Links */
 nav a.active,
 nav a:hover {
   background: var(--accent);
@@ -173,7 +164,7 @@ main {
   transform: translateY(-3px);
 }
 
-/* ===== Featured Products Grid – Luxury Layout ===== */
+/* ===== Featured Products Grid ===== */
 #featured-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -182,20 +173,15 @@ main {
   margin-top: 30px;
 }
 
-/* Luxury Asymmetric Spans for Featured Products */
-#featured-grid .product-card:nth-child(1),
-#featured-grid .product-card:nth-child(4) {
-  grid-column: span 2; /* make 1st and 4th cards larger */
+/* ===== ✅ SHOP GRID FIX (ONLY ADDITION) ===== */
+#product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 30px;
 }
 
-#featured-grid .product-card:nth-child(2),
-#featured-grid .product-card:nth-child(3),
-#featured-grid .product-card:nth-child(5),
-#featured-grid .product-card:nth-child(6) {
-  grid-column: span 1;
-}
-
-/* ===== Product Card Styles – Luxury Upgrade ===== */
+/* ===== Product Card Styles ===== */
 .product-card {
   background: rgba(255, 255, 255, 0.95);
   border: 1px solid var(--border);
@@ -230,14 +216,12 @@ main {
   color: var(--accent-dark);
   margin-bottom: 10px;
   font-weight: 700;
-  letter-spacing: 0.5px;
 }
 
 .product-card .description {
   font-size: 1rem;
   color: var(--muted);
   margin-bottom: 12px;
-  line-height: 1.5;
 }
 
 .product-card .price {
@@ -255,16 +239,13 @@ main {
   border: none;
   cursor: pointer;
   font-weight: 600;
-  transition: all 0.4s ease;
 }
 
 .product-card .add-to-cart:hover {
   background: var(--accent);
   color: var(--primary);
   transform: translateY(-3px);
-  box-shadow: 0 0 18px rgba(200,169,106,0.5);
 }
-
 
 /* ===== Footer ===== */
 footer {
@@ -273,44 +254,24 @@ footer {
   text-align: center;
   padding: 20px;
   margin-top: auto;
-  font-size: 0.95rem;
-}
-
-/* ===== Toast ===== */
-#toast {
-  background: var(--primary);
-  color: white;
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 12px 24px;
-  border-radius: 12px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 10;
-}
-
-#toast.show {
-  opacity: 1;
-}
-.cart-link {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-#cart-count {
-  font-size: 0.9rem;
-  color: var(--accent);
-  font-weight: 600;
 }
 
 /* ===== Responsive ===== */
 @media (max-width: 900px) {
   #featured-grid { grid-template-columns: 1fr; }
-  .hero { padding: 50px 30px; }
+
+  /* ✅ ADDED */
+  #product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   header { flex-direction: column; align-items: flex-start; }
   nav a { margin-left: 0; margin-top: 12px; display: block; }
+}
+
+@media (max-width: 500px) {
+  /* ✅ ADDED */
+  #product-grid {
+    grid-template-columns: 1fr;
+  }
 }
