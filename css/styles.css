@@ -52,18 +52,6 @@ body::before {
   to { transform: rotate(360deg); }
 }
 
-
-@keyframes spinBackground {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-
-@keyframes spinBackground {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 /* ===== Header ===== */
 header {
   width: 100%;
